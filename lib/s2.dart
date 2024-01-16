@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class s2 extends StatelessWidget {
   const s2({super.key});
@@ -170,6 +171,13 @@ class s2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              "Wahid Tausif Islam",
+              style: GoogleFonts.poppins(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
             SizedBox(
               height: 50,
               width: double.infinity,
