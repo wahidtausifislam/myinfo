@@ -166,50 +166,79 @@ class s2 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.green,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Wahid Tausif Islam",
-              style: GoogleFonts.poppins(
-                fontSize: 24,
-                fontWeight: FontWeight.w900,
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(8),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TextField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                    prefix: Icon(Icons.supervised_user_circle_rounded),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(width: 10),
+                    ),
+                    hintText: "Write Your name",
+                    labelText: "Enter Text"),
               ),
-            ),
-            SizedBox(
-              height: 50,
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, foregroundColor: Colors.white),
-                onPressed: () {},
-                child: Text("Button"),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text("Text Button"),
-            ),
-            OutlinedButton(
-                onPressed: () {
-                  DialogBox(context);
-                },
-                child: Text("Outline Button")),
-            InkWell(
-              splashColor: Colors.yellow,
-              onTap: () {},
-              child: Card(
-                color: Colors.deepOrange,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text("Hello"),
+              Text(
+                "Wahid Tausif Islam",
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white),
+                  onPressed: () {},
+                  child: Text("Button"),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text("Text Button"),
+              ),
+              OutlinedButton(
+                  onPressed: () {
+                    DialogBox(context);
+                  },
+                  child: Text("Outline Button")),
+              InkWell(
+                splashColor: Colors.yellow,
+                onTap: () {},
+                child: Card(
+                  color: Colors.deepOrange,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text("Hello"),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepOrange,
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return Container(
+                  height: 200,
+                );
+              });
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
